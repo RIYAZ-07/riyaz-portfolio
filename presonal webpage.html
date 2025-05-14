@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Riyaz Naikodi - Cybersecurity Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background-color: #ffffff;
+      color: #111;
+      display: flex;
+      justify-content: center;
+      align-items: start;
+      min-height: 100vh;
+      padding: 2rem;
+    }
+    .container {
+      max-width: 800px;
+      width: 100%;
+    }
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+      text-align: center;
+    }
+    h2 {
+      font-size: 1.25rem;
+      color: #666;
+      margin-bottom: 1.5rem;
+      text-align: center;
+    }
+    p {
+      font-size: 1rem;
+      line-height: 1.6;
+      margin-bottom: 1.5rem;
+      text-align: center;
+    }
+    .links {
+      text-align: center;
+      margin-bottom: 1rem;
+    }
+    .links a {
+      margin: 0 10px;
+      text-decoration: none;
+      color: #0077b5;
+      font-weight: 600;
+    }
+    .links a:hover {
+      text-decoration: underline;
+    }
+    .resume-btn {
+      display: block;
+      text-align: center;
+      margin-top: 20px;
+    }
+    .resume-btn a {
+      padding: 0.6rem 1.2rem;
+      background-color: #111;
+      color: #fff;
+      border-radius: 5px;
+      text-decoration: none;
+      font-weight: 600;
+    }
+    .resume-btn a:hover {
+      background-color: #333;
+    }
+    #inputSection {
+      text-align: center;
+      margin: 2rem 0;
+    }
+    #inputBox {
+      padding: 0.5rem 1rem;
+      font-size: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      width: 60%;
+    }
+    #outputSection {
+      margin-top: 2rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Riyaz Naikodi</h1>
+    <h2>Cybersecurity | IT Solutions | Programming</h2>
+    <p>
+      Master’s student in Cybersecurity at Yeshiva University. Experienced with web development,
+      network protection, and threat analysis. Passionate about SOC operations, malware analysis,
+      and application security. Preparing for CompTIA Security+.
+    </p>
+
+    <div id="inputSection">
+      <input id="inputBox" type="text" placeholder="Type 'skills', 'projects', or 'certifications'..." onkeyup="handleInput(event)" />
+    </div>
+
+    <div id="outputSection"></div>
+
+    <div class="links">
+      <a href="mailto:rnaikodi@mail.yu.edu">Email</a>
+      <a href="https://www.linkedin.com/in/riyaz-naikodi-085b37251/" target="_blank">LinkedIn</a>
+      <a href="resume2025-Riyaz.pdf" target="_blank">Resume</a>
+    </div>
+    <div class="resume-btn">
+      <a href="resume2025-Riyaz.pdf" target="_blank">Download My Resume</a>
+    </div>
+  </div>
+
+  <script>
+    function handleInput(event) {
+      if (event.key === 'Enter') {
+        const input = event.target.value.toLowerCase();
+        const output = document.getElementById('outputSection');
+        output.innerHTML = '';
+
+        if (input.includes('skills')) {
+          output.innerHTML = `
+            <h3>Skills</h3>
+            <ul>
+              <li>Programming & Scripting</li>
+              <li>Networking & System Administration</li>
+              <li>Risk Management & Vulnerability Assessment</li>
+              <li>Cloud Security & Application Security</li>
+              <li>Malware Analysis, Kali Linux, VMware</li>
+            </ul>
+          `;
+        } else if (input.includes('cert')) {
+          output.innerHTML = `
+            <h3>Certifications & Training</h3>
+            <ul>
+              <li>ISC2 Certified in Cybersecurity (CC)</li>
+              <li>SOC Hands-On Lab Program</li>
+              <li>CompTIA Security+ (in progress)</li>
+            </ul>
+          `;
+        } else if (input.includes('project')) {
+          output.innerHTML = `
+            <h3>Projects</h3>
+            <ul>
+              <li><strong>Web Attack Surface Management (WASM):</strong> Tool for identifying and managing exposed web assets; includes domains, APIs, ports, and services.</li>
+              <li><strong>Risk Assessment & Management:</strong> Evaluated network risks, recommended VPN, MFA, encryption, backups, and continuity planning.</li>
+              <li><strong>Cybersecurity Foundation:</strong> Proposed a security program with MFA, segmentation, GDPR, ISO 27001, aligned with NIST/CIS.</li>
+              <li><strong>Game Development Project:</strong> Unity-based game using C#, Blender, Mixamo animations, and Photoshop UI design.</li>
+            </ul>
+          `;
+        } else {
+          output.innerHTML = `<p>Please type "skills", "projects", or "certifications".</p>`;
+        }
+      }
+    }
+  </script>
+</body>
+</html>
